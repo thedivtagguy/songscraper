@@ -7,15 +7,14 @@ songscraper()
 \description{
 By inputting the artist's name as it appears on AZLyrics.com, songscraper() allows you to scrape all lyrics and album, song name, year details into a dataframe. This can be used for text mining or whatever you wish.
 
-There is also an option scrape specific song lyrics and information based on a range that you specify.
+There is also an option scrape specific song lyrics and information based on a range that you specify. Do note that there is a 10 second break between each scrape to prevent an IP ban.
 }
 \usage{
 
 #View Song List
 
 songlist(
-    "artistname"
-)
+    "artistname")
 
 
 #Scrape Songs
@@ -23,8 +22,7 @@ songlist(
 songscraper(
     "artistname",
     from,
-    to
-)
+    to)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
