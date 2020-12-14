@@ -1,0 +1,13 @@
+Package: songscraper
+Type: Package
+Title: Scrape All Lyrics by an Artist from AZLyrics.com
+Version: 0.1.0
+Author: Aman Bhargava <amanbhargava2001@gmail.com>
+Maintainer: Aman Bhargava <amanbhargava2001@gmail.com>
+Description: A clean function that takes the name of an artist and scrapes all songs, lyrics, 
+    album and year details from AZLyrics.com into a clean dataframe. This can be used for
+    text-mining or whatever you wish.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: dplyr, tidyverse, rvest, magrittr
