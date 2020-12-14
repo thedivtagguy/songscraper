@@ -11,3 +11,4 @@ License: MIT
 Encoding: UTF-8
 LazyData: true
 Imports: dplyr, tidyverse, rvest, magrittr
+RoxygenNote: 7.1.1

@@ -31,7 +31,7 @@ songlist <- function(artistname) {
 }
 
 #Function to Scrape Lyrics
-songscrape <- function(artistname, from, to) {
+songscraper <- function(artistname, from, to) {
 
   #If only name is Specified
   if(missing(from) && missing(to)){
@@ -99,9 +99,9 @@ songscrape <- function(artistname, from, to) {
     #open connection to url
     for_html_code <- xml2::read_html(paste_url)
     for_lyrics <- rvest::html_node(for_html_code, xpath = "/html/body/div[2]/div/div[2]/div[5]")
-    for_album <- rvest::html_node(for_html_code, xpath = "/html/body/div[2]/div/div[2]/div[11]/div[1]/b")
+    for_album <- rvest::html_node(for_html_code, xpath = "//div[@class='songinalbum_title']/b")
     for_song_names <- rvest::html_node(for_html_code, xpath = "/html/body/div[2]/div/div[2]/b")
-    for_song_year <- rvest::html_node(for_html_code, xpath = "/html/body/div[2]/div/div[2]/div[11]/div[1]")
+    for_song_year <- rvest::html_node(for_html_code, xpath = "//div[@class='songinalbum_title']")
     }, error = function(e){NA})
     for_lyrics <- wipe_html(for_lyrics)
     for_album <- wipe_html(for_album)
@@ -171,7 +171,7 @@ songscrape <- function(artistname, from, to) {
     year <- c()
     number <- 1
 
-    SongsList <- SongsList %>% slice(1:from)
+    SongsList <- SongsList %>% dpylr::slice(1:from)
 
     for(i in seq_along(SongsList$Songs)) {
       for_url_name <- SongsList$Songs[i]
@@ -258,7 +258,7 @@ songscrape <- function(artistname, from, to) {
     year <- c()
     number <- 1
 
-    SongsList <- SongsList %>% slice(from:to)
+    SongsList <- SongsList %>% dplyr::slice(from:to)
 
     for(i in seq_along(SongsList$Songs)) {
       for_url_name <- SongsList$Songs[i]

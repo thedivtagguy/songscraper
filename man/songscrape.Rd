@@ -1,11 +1,11 @@
-\name{songscrape}
-\alias{songscrape}
+\name{songscraper}
+\alias{songscraper}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-songscrape()
+songscraper()
 }
 \description{
-By inputting the artist's name as it appears on AZLyrics.com, songscrape() allows you to scrape all lyrics and album, song name, year details into a dataframe. This can be used for text mining or whatever you wish.
+By inputting the artist's name as it appears on AZLyrics.com, songscraper() allows you to scrape all lyrics and album, song name, year details into a dataframe. This can be used for text mining or whatever you wish.
 
 There is also an option scrape specific song lyrics and information based on a range that you specify.
 }
@@ -20,7 +20,7 @@ songlist(
 
 #Scrape Songs
 
-songscrape(
+songscraper(
     "artistname",
     from,
     to
@@ -48,7 +48,7 @@ Name of artist
 #URL: https://www.azlyrics.com/i/ironwine.html
 #Artist Name: ironwine
 
-songscrape("ironwine")
+songscraper("ironwine")
 
 #Remember to put double quotes, otherwise it may be considered an object.
 
@@ -56,14 +56,14 @@ songscrape("ironwine")
 #URL: https://www.azlyrics.com/h/harrystyles.html
 #Artist Name: harrystyles
 
-songscrape("harrystyles", 5)
+songscraper("harrystyles", 5)
 
 
 ##Scrape songs between song 50 to song 100 by Iron & Wine
 #URL: https://www.azlyrics.com/i/ironwine.html
 #Artist Name: ironwine
 
-songscrape("ironwine", 50, 100)
+songscraper("ironwine", 50, 100)
 
 
 #View list of all songs (helpful in determining numbers if you need to choose specific songs)
@@ -71,13 +71,13 @@ songscrape("ironwine", 50, 100)
 songlist("ironwine")
 
 #assign function to a new object where you want to store the data
-df <- songscrape("ironwine")
+df <- songscraper("ironwine")
 
 #scrape only 20 songs
-df <- songscrape("ironwine", 20)
+df <- songscraper("ironwine", 20)
 
 #scrape between songs 40 to 60
-df <- songscrape("ironwine", 40, 60)
+df <- songscraper("ironwine", 40, 60)
 }
 
 
