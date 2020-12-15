@@ -16,16 +16,21 @@ songlist <- function(artistname) {
   options('max.print' = 100000)
   url <- paste0("https://www.azlyrics.com/", substring(artistname, 1, 1),"/",artistname, ".html")
   page <- url
+  tryCatch( {
   songs <- page %>%
     xml2::read_html() %>%
-    rvest::html_nodes(xpath = "/html/body/div[2]/div/div[2]/div[4]/div/a") %>%
+    rvest::html_nodes(xpath = "/html/body/div[2]/div/div[2]/div[4]/div/a")%>%
     rvest::html_text() %>%
     as.data.frame()
 
   chart <- cbind(songs)
   names(chart) <- c("Songs")
   chart <- tibble::as_tibble(chart)
-  return(chart %>% print(n = Inf))
+  return(chart %>% print(n = Inf))}, error = function(cond){
+    message(paste("URL does not seem to exist:", url))
+    message("Here's the original error message:")
+    message(cond)
+  })
 }
 
 #Function to Scrape Lyrics
