@@ -1,10 +1,8 @@
-#' songscrape
-#' A clean function that takes the name of an artist and scrapes all songs, lyrics,
-#' album and year details from AZLyrics.com into a clean dataframe. This can be used for
-#' text-mining or whatever you wish.
+#'@title songscrape
+#'@description Display a list of all songs by the selected artist
 #'
-#' @param azlyricsname Artist name as it appears on the AZlyrics url but in double-quotes
-#' @return A dataframe of all lyrics by year, album and song name
+#' @param artistname Artist name as it appears on the AZlyrics url but in double-quotes
+#' @return A dataframe of all songs
 #' @export
 
 #To use this, input the artist name as it appears on the AZLyrics website url
