@@ -174,7 +174,7 @@ songscraper <- function(artistname, from, to) {
     year <- c()
     number <- 1
 
-    SongsList <- SongsList %>% dpylr::slice(1:from)
+    SongsList <- SongsList %>% dplyr::slice(1:from)
 
     for(i in seq_along(SongsList$Songs)) {
       for_url_name <- SongsList$Songs[i]
